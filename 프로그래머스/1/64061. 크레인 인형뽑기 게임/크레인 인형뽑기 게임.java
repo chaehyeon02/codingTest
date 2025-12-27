@@ -12,17 +12,17 @@ class Solution {
                     crane = board[j][moves[i] - 1];
                     board[j][moves[i] - 1] = 0;
                     
-                    if(basket.isEmpty()) basket.push(crane);
-                    else if(crane != basket.peek()) basket.push(crane);
-                    else {
+                    if (!basket.isEmpty() && basket.peek() == crane) {
                         basket.pop();
-                        answer++;
-                    }
+                        answer += 2;
+                    } 
+                    else 
+                        basket.push(crane);
                     break;
                 }
             }
         }
         
-        return answer * 2;
+        return answer;
     }
 }
