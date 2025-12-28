@@ -10,13 +10,13 @@ class Solution {
         }
         
         while(!queue.isEmpty()) {
-            int release = queue.poll();
-            int ans = 1;
-            while(!queue.isEmpty() && release >= queue.peek()) {
+            int releaseDay = queue.poll();
+            int cnt = 1;
+            while(!queue.isEmpty() && releaseDay >= queue.peek()) {
                 queue.poll();
-                ans += 1;
+                cnt += 1;
             }
-            answer.add(ans);
+            answer.add(cnt);
         }
         
         return answer.stream().mapToInt(Integer::intValue).toArray();
