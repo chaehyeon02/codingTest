@@ -19,8 +19,8 @@ class Solution {
 
         System.out.println(i);
         if(endCnt) {
-            answer[0] = (i + 1) % n == 0 ? n : (i + 1) % n;
-            answer[1] = (i + 1) % n == 0 ? (i + 1) / n: (i + 1) / n + 1;
+            answer[0] = i % n + 1;
+            answer[1] = i / n + 1;
         }
 
         return answer;
