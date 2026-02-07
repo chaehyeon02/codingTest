@@ -2,10 +2,10 @@ import java.util.*;
 
 class Solution {
     private class Node {
-        int dist, cost;
+        int dest, cost;
         
-        Node(int dist, int cost) {
-            this.dist = dist;
+        Node(int dest, int cost) {
+            this.dest = dest;
             this.cost = cost;
         }
     }
@@ -32,13 +32,13 @@ class Solution {
         while(!pq.isEmpty()) {
             Node now = pq.poll();
             
-            if(dist[now.dist] < now.cost)
+            if(dist[now.dest] < now.cost)
                 continue;
             
-            for(Node next : list[now.dist]) {
-                if(dist[next.dist] > now.cost + next.cost) {
-                    dist[next.dist] = now.cost + next.cost;
-                    pq.add(new Node(next.dist, now.cost + next.cost));
+            for(Node next : list[now.dest]) {
+                if(dist[next.dest] > now.cost + next.cost) {
+                    dist[next.dest] = now.cost + next.cost;
+                    pq.add(new Node(next.dest, now.cost + next.cost));
                 }
             }
         }
