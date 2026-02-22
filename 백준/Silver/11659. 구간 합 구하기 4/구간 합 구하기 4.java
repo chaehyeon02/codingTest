@@ -2,9 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    static boolean[] visited;
-    static ArrayList<Integer>[] edges;
-
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -15,7 +12,6 @@ public class Main {
         int m = Integer.parseInt(st.nextToken());
 
         int[] arr = new int[n + 1];
-        arr[0] = 0;
         st = new StringTokenizer(br.readLine());
         for(int i = 1; i <= n; i++) //누적합
             arr[i] = Integer.parseInt(st.nextToken()) + arr[i - 1];
@@ -27,6 +23,6 @@ public class Main {
             answer.append(arr[end] - arr[start - 1]).append("\n");
         }
 
-        System.out.println(answer);
+        System.out.print(answer);
     }
 }
